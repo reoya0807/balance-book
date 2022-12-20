@@ -1,0 +1,62 @@
+<style>
+/*** The new CSS reset - version 1.7.3 (last updated 7.8.2022) ***/
+*:where(:not(html,iframe,canvas,img,svg,video,audio):not(svg*,symbol*)){all:unset;display:revert}*,*::before,*::after{box-sizing:border-box}
+a,button{cursor:revert}
+ol,ul,menu{list-style:none}
+img{max-width:100%}
+table{border-collapse:collapse}
+textarea{white-space:revert}
+a {
+	text-decoration: none;
+	color: #000;
+}
+a:active {
+	color: #000;
+}
+a:focus {
+	outline: none;
+}
+
+/*tabの形状*/
+.tab {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tab li a {
+	display: block;
+	background:#ddd;
+	margin:0 2px;
+	padding:10px 20px;
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a {
+	background:#fff;
+}
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #fff;
+	padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+	display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+</style>
