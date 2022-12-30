@@ -13,35 +13,9 @@
       <li><a href="#analysis">分析</a></li>
     </ul>
     
-    <div id="home" class="area">
-    <div class="balance-table mx-auto px-5">
-    <table class="container">
-      <tr class="row"><th colspan="2">資産</th></tr>
-      <? for (var i = 0; i < assetData.length; i++) { ?>
-        <tr class="row tr-hover-blue">
-          <td class="col"><?= assetData[i][0] ?></td>
-          <td class="col"><?= assetData[i][1] ?></td>
-        </tr>
-      <? } ?>
-    </table>
-    <table class="container">
-      <tr class="row"><th colspan="2">負債</th></tr>
-      <? for (var i = 0; i < debtData.length; i++) { ?>
-        <tr class="row tr-hover-red">
-          <td class="col"><?= debtData[i][0] ?></td>
-          <td class="col"><?= debtData[i][1] ?></td>
-        </tr>
-      <? } ?>
-      <tr class="row"><th colspan="2">純資産</th></tr>
-      <? for (var i = 0; i < reserveFundData.length; i++) { ?>
-        <tr class="row tr-hover-green">
-          <td class="col"><?= reserveFundData[i][0] ?></td>
-          <td class="col"><?= reserveFundData[i][1] ?></td>
-        </tr>
-      <? } ?>
-    </table>
-    </div>
-    </div>
+    <? var t_home_tab = HtmlService.createTemplateFromFile('home-tab'); ?>
+    <? t_home_tab.balanceData = balanceData; ?>
+    <?!= t_home_tab.evaluate().getContent(); ?>
 
     <div id="payment" class="area"></div>
     

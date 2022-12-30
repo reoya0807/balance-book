@@ -1,0 +1,48 @@
+<? assetData = balanceData.assetData; debtData = balanceData.debtData; reserveFundData = balanceData.reserveFundData; ?>
+<div id="home" class="area">
+    <div class="balance-table mx-auto px-5">
+        <table class="container">
+            <tr class="row">
+                <th colspan="2">資産</th>
+            </tr>
+            <? for (var i = 0; i < assetData.length; i++) { ?>
+            <tr class="row tr-hover-blue">
+                <td class="col">
+                    <?= assetData[i].entryName ?>
+                </td>
+                <td class="col">
+                    <?= assetData[i].amount ?>
+                </td>
+            </tr>
+            <? } ?>
+        </table>
+        <table class="container">
+            <tr class="row">
+                <th colspan="2">負債</th>
+            </tr>
+            <? for (var i = 0; i < debtData.length; i++) { ?>
+            <tr class="row tr-hover-red">
+                <td class="col">
+                    <?= debtData[i].entryName ?>
+                </td>
+                <td class="col">
+                    <?= debtData[i].amount ?>
+                </td>
+            </tr>
+            <? } ?>
+            <tr class="row">
+                <th colspan="2">純資産</th>
+            </tr>
+            <? for (var i = 0; i < reserveFundData.length; i++) { ?>
+            <tr class="row tr-hover-green">
+                <td class="col">
+                    <?= reserveFundData[i].entryName ?>
+                </td>
+                <td class="col">
+                    <?= reserveFundData[i].amount ?>
+                </td>
+            </tr>
+            <? } ?>
+        </table>
+    </div>
+</div>

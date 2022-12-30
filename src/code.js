@@ -17,21 +17,41 @@ function doGet() {
   console.log(t.data[0][0].getName());
 
   // テスト用データ
-  t.assetData = [
-    ["現金", 500],
-    ["Suica", 5000],
-    ["Paypay", 10000],
-    ["ゆうちょ", 1000000],
-    ["みずほ銀行", 100000]
-  ];
-  t.debtData = [
-    ["クレジットカード", 50000]
-  ];
-  t.reserveFundData = [
-    ["美容積立資金", 700000],
-    ["旅行積立資金", 50000],
-    ["引越積立資金", 300000],
-    ["プレゼント積立資金", 15500]
-  ];
+  const balanceData = {
+    "assetData": [{
+      "entryName": "現金",
+      "amount": 500
+    }, {
+      "entryName": "Suica",
+      "amount": 5000
+    }, {
+      "entryName": "Paypay",
+      "amount": 10000
+    }, {
+      "entryName": "ゆうちょ",
+      "amount": 1000000
+    }, {
+      "entryName": "みずほ銀行",
+      "amount": 10000
+    }],
+    "debtData": [{
+      "entryName": "クレジットカード",
+      "amount": 50000
+    }],
+    "reserveFundData": [{
+      "entryName": "美容積立資金",
+      "amount": 700000
+    }, {
+      "entryName": "旅行積立資金",
+      "amount": 50000
+    }, {
+      "entryName": "引越積立資金",
+      "amount": 300000
+    }, {
+      "entryName": "プレゼント積立資金",
+      "amount": 15500
+    }]
+  };
+  t.balanceData = balanceData;
   return t.evaluate();
 }
